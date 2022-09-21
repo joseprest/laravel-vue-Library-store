@@ -1,5 +1,5 @@
 <template>
-    <v-footer color="indigo" app>
+    <v-footer color="grey darken-1" app>
         <span class="white--text">Copyright &copy; Website 2022</span>
     </v-footer>
 </template>

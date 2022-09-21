@@ -5,11 +5,11 @@ import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
 
 import Search from '../pages/Search.vue';
-import Libraries from '../pages/Libraries';
-import AddBook from '../components/AddBook';
+import ListLibrary from '../pages/libraries/List.vue';
+import AddBook from '../components/AddBook.vue';
 import DetailBook from '../components/DetailBook.vue';
-import BookIndex from '../components/Books.vue';
-import EditBook from '../components/EditBook';
+import ListBook from '../components/Books.vue';
+import EditBook from '../components/EditBook.vue';
 
 import DetailLibrary from "../pages/libraries/Detail.vue"
 
@@ -47,7 +47,7 @@ export const routes = [
     {
         name: 'books',
         path: '/books',
-        component: BookIndex
+        component: ListBook
     },
     {
         name: 'addbook',
@@ -67,7 +67,7 @@ export const routes = [
     {
         name: 'libraries',
         path: '/libraries',
-        component: Libraries
+        component: ListLibrary
     },
     {
         name: 'detail-library',
