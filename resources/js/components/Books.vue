@@ -9,17 +9,19 @@
                     <th>Title</th>
                     <th>Author</th>
                     <th>Created At</th>
-                    <th>Updated At</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="book in books" :key="book.id">
                     <td>{{ book.id }}</td>
-                    <td>{{ book.title }}</td>
+                    <td>
+                        <router-link :to="`book/${book.id}`">{{
+                            book.title
+                        }}</router-link>
+                    </td>
                     <td>{{ book.author }}</td>
                     <td>{{ book.created_at }}</td>
-                    <td>{{ book.updated_at }}</td>
                     <td>
                         <div class="btn-group" role="group">
                             <router-link
@@ -42,13 +44,14 @@
             </tbody>
         </table>
 
-        <button
-            type="button"
-            class="btn btn-info"
+        <v-btn
+            class="ma-2"
+            outlined
+            color="indigo"
             @click="$router.push('/books/add')"
         >
             Add Book
-        </button>
+        </v-btn>
     </div>
 </template>
 
@@ -64,7 +67,12 @@ export default {
             this.$axios
                 .get("/api/books")
                 .then((response) => {
-                    this.books = response.data;
+                    this.books = response.data.map((book) => {
+                        return {
+                            ...book,
+                            created_at: new Date(book.created_at).toISOString(),
+                        };
+                    });
                 })
                 .catch(function (error) {
                     console.error(error);

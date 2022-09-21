@@ -72,11 +72,29 @@
                                 ></v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
+                        <v-list-item>
+                            <v-list-item-content>
+                                <v-list-item-subtitle
+                                    >Libraries</v-list-item-subtitle
+                                >
+                                <v-list-item-description>
+                                    <v-chip
+                                        v-for="library in model.libraries"
+                                        :key="library.id"
+                                        class="ma-2"
+                                        color="green"
+                                        text-color="white"
+                                    >
+                                        {{ library.name }}
+                                    </v-chip>
+                                </v-list-item-description>
+                            </v-list-item-content>
+                        </v-list-item>
                     </v-list>
                     <v-card-actions>
                         <v-btn
                             @click="thumbupBook(model.id)"
-                            :color="model.isLike ? 'blue' : 'gray'"
+                            :color="model.isLike ? 'yellow' : 'gray'"
                             icon
                             class="mr-4"
                             ><v-icon>mdi-thumb-up</v-icon></v-btn
@@ -169,6 +187,7 @@ export default {
                     .get(`/api/books`)
                     .then((response) => {
                         const { data } = response;
+                        console.log(data);
                         this.entries = data;
                     })
                     .catch(function (error) {

@@ -12,7 +12,6 @@
                             v-model="book.title"
                         />
                     </div>
-                    <br />
                     <div class="form-group">
                         <label>Author</label>
                         <input
@@ -22,6 +21,14 @@
                         />
                     </div>
                     <br />
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea
+                            class="form-control"
+                            rows="5"
+                            v-model="book.description"
+                        />
+                    </div>
                     <button type="submit" class="btn btn-primary">
                         Update Book
                     </button>

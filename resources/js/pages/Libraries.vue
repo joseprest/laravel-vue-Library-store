@@ -13,10 +13,7 @@
                         library.name
                     }}</router-link>
                 </v-card-title>
-                <v-card-subtitle>
-                    <h3>Books</h3>
-                </v-card-subtitle>
-                <v-card-text>description</v-card-text>
+                <v-card-text>{{ library.books.length }} books</v-card-text>
             </v-card>
         </v-col>
     </v-row>
@@ -32,6 +29,7 @@ export default {
     mounted() {
         this.$axios.get("/sanctum/csrf-cookie").then((response) => {
             this.$axios.get("/api/libraries").then((response) => {
+                console.log(response.data);
                 this.libraries = response.data;
             });
         });

@@ -11,7 +11,7 @@ class BookController extends Controller
     // all books
     public function index()
     {
-        $books = Book::with('votedUsers')->get()->toArray();
+        $books = Book::with('votedUsers')->with('libraries')->get()->toArray();
         return array_reverse($books);
     }
 

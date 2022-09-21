@@ -22,6 +22,14 @@
                         />
                     </div>
                     <br />
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea
+                            class="form-control"
+                            rows="5"
+                            v-model="book.description"
+                        />
+                    </div>
                     <button type="submit" class="btn btn-primary">
                         Add Book
                     </button>

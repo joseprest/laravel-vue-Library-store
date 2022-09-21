@@ -7,6 +7,8 @@ import Dashboard from '../pages/Dashboard';
 import Search from '../pages/Search.vue';
 import Libraries from '../pages/Libraries';
 import AddBook from '../components/AddBook';
+import DetailBook from '../components/DetailBook.vue';
+import BookIndex from '../components/Books.vue';
 import EditBook from '../components/EditBook';
 
 import DetailLibrary from "../pages/libraries/Detail.vue"
@@ -43,6 +45,11 @@ export const routes = [
         component: Search
     },
     {
+        name: 'books',
+        path: '/books',
+        component: BookIndex
+    },
+    {
         name: 'addbook',
         path: '/books/add',
         component: AddBook
@@ -51,6 +58,11 @@ export const routes = [
         name: 'editbook',
         path: '/books/edit/:id',
         component: EditBook
+    },
+    {
+        name: 'detailbook',
+        path: '/book/:id',
+        component: DetailBook
     },
     {
         name: 'libraries',

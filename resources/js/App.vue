@@ -17,6 +17,9 @@
                     <router-link to="/libraries" class="nav-item nav-link"
                         >Libraries</router-link
                     >
+                    <router-link to="/books" class="nav-item nav-link"
+                        >Books</router-link
+                    >
                     <a
                         class="nav-item nav-link"
                         style="cursor: pointer"

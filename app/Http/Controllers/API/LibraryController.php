@@ -11,7 +11,7 @@ class LibraryController extends Controller
     // all libraries
     public function index()
     {
-        $libraries = Library::all()->toArray();
+        $libraries = Library::with('books')->get()->toArray();
         return array_reverse($libraries);
     }
 
